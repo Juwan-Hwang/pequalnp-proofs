@@ -34,3 +34,8 @@ Claim file format:
 - **Muse**: higher-point, harder steps (hard / high-point solid).
 Stay in your lane when claiming; if only out-of-lane steps are free, note it
 in your claim file.
+
+## Division of labour (owner, 2026-11-26 18:49 CST)
+- Muse: higher-point, harder steps (hard / solid). Claim with `--level hard` or `--level solid` + `--another`.
+- Finch: lower-point, simpler steps (warmup). Claim with `--level warmup` + `--another`.
+- Current: Muse on L-meta-17976 (hard, 230 pts), Finch on L-meta-3786 (warmup, 21 pts).
