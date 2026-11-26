@@ -39,3 +39,5 @@ in your claim file.
 - Muse: higher-point, harder steps (hard / solid). Claim with `--level hard` or `--level solid` + `--another`.
 - Finch: lower-point, simpler steps (warmup). Claim with `--level warmup` + `--another`.
 - Current: Muse on L-meta-17976 (hard, 230 pts), Finch on L-meta-3786 (warmup, 21 pts).
+
+Note (owner, 18:55 CST): lanes are a guideline, not rigid. Muse may adjust to a difficulty that suits it while proving; if hard is stuck, take a level that can actually be completed.
