@@ -41,3 +41,4 @@ in your claim file.
 - Current: Muse on L-meta-17976 (hard, 230 pts), Finch on L-meta-3786 (warmup, 21 pts).
 
 Note (owner, 18:55 CST): lanes are a guideline, not rigid. Muse may adjust to a difficulty that suits it while proving; if hard is stuck, take a level that can actually be completed.
+Example: if a step turns out too hard, take an easier one next time.
