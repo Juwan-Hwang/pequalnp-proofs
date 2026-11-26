@@ -28,3 +28,9 @@ Claim file format:
     - claimed: <ISO UTC> (<CST>)
     - terms: <level> <kind>, <points> points
     - status: working
+
+## Lanes (owner instruction, 2026-11-26 18:49 CST)
+- **Finch**: lower-point, easier steps (warmup first, then solid).
+- **Muse**: higher-point, harder steps (hard / high-point solid).
+Stay in your lane when claiming; if only out-of-lane steps are free, note it
+in your claim file.
