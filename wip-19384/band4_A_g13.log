@@ -1,0 +1,24 @@
+n=4 mask=29596 gates=13 solver=cadical
+0 [0, 0, 1, 1]
+1 [1, 0, 0, 1]
+2 [1, 1, 0, 0]
+3 [1, 1, 1, 0]
+vars=1001 clauses=13444
+solving...
+result: SAT
+  gate 0 -> wire 8: ('OR', 6, 7)
+  gate 1 -> wire 9: ('AND', 0, 8)
+  gate 2 -> wire 10: ('AND', 1, 7)
+  gate 3 -> wire 11: ('OR', 5, 6)
+  gate 4 -> wire 12: ('AND', 2, 5)
+  gate 5 -> wire 13: ('AND', 3, 11)
+  gate 6 -> wire 14: ('OR', 2, 3)
+  gate 7 -> wire 15: ('OR', 10, 12)
+  gate 8 -> wire 16: ('OR', 9, 13)
+  gate 9 -> wire 17: ('OR', 1, 14)
+  gate 10 -> wire 18: ('OR', 4, 15)
+  gate 11 -> wire 19: ('AND', 17, 18)
+  gate 12 -> wire 20: ('OR', 16, 19)
+output wire: 20
+independent verification on 16 inputs: PASS
+wrote circuit file

@@ -1,0 +1,7 @@
+n=3 mask=307 gates=6 solver=cadical
+0 [1, 1, 0]
+1 [0, 1, 1]
+2 [0, 0, 1]
+vars=270 clauses=2138
+solving...
+result: UNSAT

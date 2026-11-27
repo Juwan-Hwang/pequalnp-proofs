@@ -1,0 +1,17 @@
+n=3 mask=413 gates=7 solver=cadical
+0 [1, 0, 1]
+1 [1, 1, 0]
+2 [0, 1, 1]
+vars=322 clauses=2717
+solving...
+result: SAT
+  gate 0 -> wire 6: ('OR', 1, 5)
+  gate 1 -> wire 7: ('OR', 2, 3)
+  gate 2 -> wire 8: ('OR', 0, 4)
+  gate 3 -> wire 9: ('OR', 6, 7)
+  gate 4 -> wire 10: ('AND', 8, 9)
+  gate 5 -> wire 11: ('AND', 6, 7)
+  gate 6 -> wire 12: ('OR', 10, 11)
+output wire: 12
+independent verification on 9 inputs: PASS
+wrote circuit file

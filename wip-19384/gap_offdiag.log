@@ -1,0 +1,23 @@
+== offdiag: n=5 A mask=16510910 notA mask=17043521
+  n=5 mask=17043521 gates=0: ERROR:n=5 mask=17043521 gates=0 solver=cadical
+0 [1, 0, 0, 0, 0]
+1 [0, 1, 0, 0, 0]
+2 [0, 0, 1, 0, 0]
+3 [0, 0, 0, 1, 0]
+4 [0, 0, 0, 0, 1]
+Traceback (most recent call last):
+  File "/home/hatch/workspace/scratch-19384/exact.py", line 86, in <module>
+    clauses.append([val[(t, NW - 1)]] if A(u, v) else [-val[(t, NW - 1)]])
+                    ~~~^^^^^^^^^^^^^
+KeyError: (0, 9)
+ (0.1s)
+  n=5 mask=17043521 gates=1: UNSAT (0.1s)
+  n=5 mask=17043521 gates=2: UNSAT (0.1s)
+  n=5 mask=17043521 gates=3: UNSAT (0.1s)
+  n=5 mask=17043521 gates=4: UNSAT (0.1s)
+  n=5 mask=17043521 gates=5: UNSAT (0.1s)
+  n=5 mask=17043521 gates=6: UNSAT (0.4s)
+  n=5 mask=17043521 gates=7: UNSAT (2.8s)
+  n=5 mask=17043521 gates=8: UNSAT (55.9s)
+  n=5 mask=17043521 gates=9: SAT (0.2s)
+  cost(notA) = 9; budget for A = 15
