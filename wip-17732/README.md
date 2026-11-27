@@ -20,5 +20,10 @@ Nothing was submitted.
   the other 5 + rfl, each with `set_option maxHeartbeats 4000000 in`), combined
   by term-mode match; FanInTwo via fin_cases+simp; size via decide.
   Plain `decide` over 1024 inputs OOMs — do not retry.
+- **21-gate formalization READY** (added 2026-11-27): `formalization21.lean`
+  proves `HasCircuitSize 10 f 21` for the actual 21-gate circuit; compiles
+  clean with narrowed imports (2m24s, no sorry). Generator:
+  `gen_formalization21.py`. If the desk assigns a <=21 rung of this ladder,
+  drop it into that skeleton per the instructions at the end of NOTES.md.
 
 Full log in NOTES.md.

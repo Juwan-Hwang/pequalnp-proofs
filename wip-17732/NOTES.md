@@ -51,3 +51,46 @@ checksum 472561); K4-free and 3-colourable characterizations match on all rows.
 - NO <=18 circuit found. NO UNSAT proof. Best verified = 21 gates (hand2.py,
   re-verified 1024/1024 PASS). Formalization path validated (test22h.lean).
 - Skeleton file untouched (still sorry). Nothing submitted/released.
+
+## 21-gate formalization — READY (formalization21.lean, compiles clean)
+Prepared 2026-11-27 (prep only; no lease held, nothing submitted). The actual
+21-gate circuit from hand2.py is now fully formalized:
+- Generator: gen_formalization21.py (asserts the gate list against sim.py on
+  all 1024 inputs before emitting; regenerates formalization21.lean).
+- formalization21.lean (369 lines): `circ21` + 32 chunk lemmas + `key21`
+  inside `namespace PEqualNP.Outside.L_meta_17732`, then the theorem
+  `PEqualNP.Outside.L_meta_17732` with the skeleton's exact statement but
+  bound 21 instead of 18 (verified character-identical modulo the bound).
+  No sorry, no double quotes, no # commands; set_option only as
+  `set_option maxHeartbeats 4000000 in`.
+- Verified: compiles clean with narrowed imports (`import
+  PEqualNP.Defs.MetaComplexity`) via `lean` with LEAN_PATH from
+  `lake env printenv LEAN_PATH` in ~/workspace/pequalnp-proofs/lean —
+  exit 0, empty log, 2m24s. Log: compile21.log.
+
+### How to drop into a real <=21 skeleton
+1. Take the assigned step's skeleton file (it will have `import Mathlib`,
+   `import PEqualNP.Defs`, and `theorem PEqualNP.Outside.L_meta_<N> :
+   (... HasCircuitSize 10 f <bound>) := by sorry`).
+2. Replace the skeleton's theorem+`sorry` with everything in
+   formalization21.lean AFTER its first import line (i.e. from
+   `namespace PEqualNP.Outside.L_meta_17732` to the end). Keep the
+   skeleton's two imports; delete formalization21.lean's
+   `import PEqualNP.Defs.MetaComplexity` line.
+3. If the assigned step is not L-meta-17732, rename `L_meta_17732` to the
+   step's own name everywhere it appears (namespace line, `end` line,
+   theorem name, and the two qualified references
+   `PEqualNP.Outside.L_meta_17732.circ21` / `.key21` in the proof).
+   If the skeleton's bound is 22/23/24 instead of 21, change the `21` in
+   the theorem statement to match — the proof still works (size is proved
+   by `decide` against the actual gate count 21, and 21 <= bound).
+   If the bound is < 21, this formalization does not apply.
+4. Run `tools/pnp.sh check <step>` then `tools/pnp.sh submit <step>` as usual.
+- Expected full-build cost: NOT measured (no lease, prep only). The narrowed
+  compile took 2m24s, almost all of it chunk elaboration. The real file's
+  `import Mathlib` + `import PEqualNP.Defs` (umbrella) will load far more
+  oleans than the narrowed import — expect the check build to take
+  substantially longer (plausibly 5-20 min) and watch memory: full-Mathlib
+  loads have thrashed in this VM before (~6.2GB oleans vs ~6GB RAM). If
+  `pnp.sh check` OOMs, that is an environment limit, not a proof error —
+  the proof is verified clean under narrowed imports.
